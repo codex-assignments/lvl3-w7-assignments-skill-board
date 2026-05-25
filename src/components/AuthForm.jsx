@@ -30,7 +30,9 @@ export default function AuthForm() {
 
   return (
     <div className="auth-container">
-      <h2>Sign In to Manage Skills</h2>
+      <h2>
+        {isSignUp ? "Sign Up to Manage Skills" : "Sign In to Manage Skills"}
+      </h2>
 
       <form onSubmit={handleSubmit}>
         <label>
@@ -59,8 +61,11 @@ export default function AuthForm() {
       {/* toggle back and forth to sign up and sign in mode, default sign in */}
       <p>
         {isSignUp ? "Already have a user profile?" : "Need to sign up first?"}{" "}
-        <button className="sign-up-toggle-btn" onClick={() => setIsSignUp(!isSignUp)}>
-          {isSignUp ? "Sign In instead" : "Sign Up instead"}
+        <button
+          className="sign-up-toggle-btn"
+          onClick={() => setIsSignUp(!isSignUp)}
+        >
+          {isSignUp ? "Sign In" : "Sign Up"}
         </button>
       </p>
     </div>
