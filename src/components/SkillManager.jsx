@@ -6,9 +6,7 @@ export default function SkillManager({
   skillsData,
   fetchSkillsData,
 }) {
-
   const [newSkillName, setNewSkillName] = useState("");
-
 
   async function handleAddSkill(e) {
     e.preventDefault();
@@ -17,7 +15,7 @@ export default function SkillManager({
     const { error } = await supabase.from("skills").insert([
       {
         name: newSkillName,
-        status: "Wishlist", 
+        status: "Wishlist",
         user_id: currentUser.id,
       },
     ]);
@@ -25,7 +23,7 @@ export default function SkillManager({
     if (error) {
       console.log(error);
     } else {
-      setNewSkillName(""); 
+      setNewSkillName("");
       fetchSkillsData(); //re-renders
     }
   }
@@ -71,7 +69,9 @@ export default function SkillManager({
       <div className="delete-list-section">
         <h2>Your Tracked Skills</h2>
         {skillsData.length === 0 ? (
-          <p>No skills tracked. Use "Add a New Skill" above to create a list.</p>
+          <p>
+            No skills tracked. Use "Add a New Skill" above to create a list.
+          </p>
         ) : (
           <ul className="manager-skills-list">
             {skillsData.map((skill) => (

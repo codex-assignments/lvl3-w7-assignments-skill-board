@@ -2,7 +2,6 @@ import React from "react";
 import { supabase } from "../utils/supabase";
 
 export default function SkillCard({ skill, fetchSkillsData, currentUser }) {
-
   async function updateSkillStatus(newStatus) {
     const { error } = await supabase
       .from("skills")

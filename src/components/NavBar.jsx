@@ -1,5 +1,5 @@
-import React from 'react'
-import { Link } from 'react-router'
+import React from "react";
+import { Link } from "react-router";
 
 export default function NavBar() {
   return (
@@ -8,10 +8,8 @@ export default function NavBar() {
         🚀 Skill Board
       </Link>
       <div className="navbar-links">
-      <Link to="/">Board View</Link>
-      <Link to="/manage">
-        Manage List
-      </Link>
+        <Link to="/">Board View</Link>
+        <Link to="/manage">Manage List</Link>
       </div>
     </nav>
   );

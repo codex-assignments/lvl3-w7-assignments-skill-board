@@ -2,7 +2,6 @@ import React from "react";
 import AuthForm from "../components/AuthForm";
 import SkillManager from "../components/SkillManager";
 
-
 export default function ManagePage({
   currentUser,
   skillsData,

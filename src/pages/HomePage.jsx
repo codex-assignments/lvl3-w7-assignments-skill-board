@@ -2,7 +2,6 @@ import React from "react";
 import SkillCard from "../components/SkillCard";
 
 export default function HomePage({ skillsData, fetchSkillsData, currentUser }) {
-
   const columns = [
     { title: "Wishlist", value: "Wishlist" },
     { title: "In Progress", value: "In Progress" },
@@ -19,7 +18,7 @@ export default function HomePage({ skillsData, fetchSkillsData, currentUser }) {
       <div className="board-grid">
         {/* map column per title */}
         {columns.map((col) => {
-// filtered skills by column value
+          // filtered skills by column value
           const filteredSkills = skillsData.filter(
             (skill) => skill.status === col.value,
           );
@@ -35,7 +34,7 @@ export default function HomePage({ skillsData, fetchSkillsData, currentUser }) {
                 {filteredSkills.length === 0 ? (
                   <p className="empty-message">No skills here yet.</p>
                 ) : (
-                    // map filtered skills to skillcards
+                  // map filtered skills to skillcards
                   filteredSkills.map((skill) => (
                     <SkillCard
                       key={skill.id}
