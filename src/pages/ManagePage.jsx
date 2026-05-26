@@ -20,7 +20,6 @@ export default function ManagePage({
       ) : (
         <AuthForm />
       )}
-      <AuthForm />
     </div>
   );
 }

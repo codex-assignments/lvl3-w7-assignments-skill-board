@@ -1,16 +1,6 @@
-# React + Vite
+This app will allow a user to sign up, sign in, and add to a list. The idea is to add a list of skills one might want to develop in their software dev career and track which ones they plan on learning, have begun studying, and now feel like they have mastered it. 
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+There are two pages to navigate to: 
+The homepage which has the list of skills and which will allow a signed-in user to move skills from column to column depending on the status of the skill. Wishlist, In progress, or Mastered
+And the management page which allows a user to sign up or sign in, and then add or delete from the list, via supabase.
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
-
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
