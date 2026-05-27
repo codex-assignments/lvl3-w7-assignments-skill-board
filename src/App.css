@@ -16,13 +16,19 @@
 
 body {
   margin: 0;
-  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-family:
+    "Inter",
+    system-ui,
+    -apple-system,
+    sans-serif;
   background-color: var(--bg-primary);
   color: var(--text-main);
   -webkit-font-smoothing: antialiased;
 }
 
-.page-container, .home-container, .manager-container {
+.page-container,
+.home-container,
+.manager-container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 2rem;
@@ -131,4 +137,3 @@ hr {
   font-size: 0.85rem;
   font-weight: bold;
 }
-
