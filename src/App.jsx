@@ -19,6 +19,23 @@ function App() {
   }
 
   useEffect(() => {
+    
+        // check to see if user signs in or out on Auth state change
+        const listener = supabase.auth.onAuthStateChange((e, session) => {
+        
+            setCurrentUser(session?.user);
+          
+        });
+    
+        //turns off connection so there isn't a new listener every time the component renders, supabase function that tells the server stop listening
+        // clean up, best practice
+        return () => {
+          listener.data.subscription.unsubscribe();
+        };
+    
+  }, [])
+
+  useEffect(() => {
     fetchSkillsData();
 
     //check to see if user is signed in and set current user
@@ -31,21 +48,7 @@ function App() {
       }
     }
     checkUser();
-
-    // check to see if user signs in or out on Auth state change
-    const listener = supabase.auth.onAuthStateChange((e, session) => {
-      if (session) {
-        setCurrentUser(session.user);
-      } else {
-        setCurrentUser(null);
-      }
-    });
-
-    //turns off connection so there isn't a new listener every time the component renders, supabase function that tells the server stop listening
-    // clean up, best practice
-    return () => {
-      listener.data.subscription.unsubscribe();
-    };
+ 
   }, []);
 
   return (

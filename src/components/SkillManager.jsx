@@ -45,7 +45,7 @@ export default function SkillManager({
   return (
     <div className="manager-container">
       <div className="manager-header">
-        <h3>Welcome, {currentUser.email}</h3>
+        <h3>Welcome, {currentUser?.email}</h3>
         <button className="logout-btn" onClick={handleLogout}>
           Log Out
         </button>

@@ -1,5 +1,7 @@
 import React from "react";
 import SkillCard from "../components/SkillCard";
+import { Navigate } from "react-router";
+import AuthForm from "../components/AuthForm";
 
 export default function HomePage({ skillsData, fetchSkillsData, currentUser }) {
   const columns = [
@@ -10,6 +12,8 @@ export default function HomePage({ skillsData, fetchSkillsData, currentUser }) {
 
   return (
     <div className="home-container">
+      {currentUser ? (
+<>
       <header className="home-header">
         <h1>Tech Skill Board</h1>
         <p>Tracking software developer skills.{}</p>
@@ -22,7 +26,7 @@ export default function HomePage({ skillsData, fetchSkillsData, currentUser }) {
           const filteredSkills = skillsData.filter(
             (skill) => skill.status === col.value,
           );
-
+          
           return (
             <div key={col.value} className="board-column">
               <div className="column-header">
@@ -37,10 +41,10 @@ export default function HomePage({ skillsData, fetchSkillsData, currentUser }) {
                   // map filtered skills to skillcards
                   filteredSkills.map((skill) => (
                     <SkillCard
-                      key={skill.id}
-                      skill={skill}
-                      fetchSkillsData={fetchSkillsData}
-                      currentUser={currentUser}
+                    key={skill.id}
+                    skill={skill}
+                    fetchSkillsData={fetchSkillsData}
+                    currentUser={currentUser}
                     />
                   ))
                 )}
@@ -49,6 +53,11 @@ export default function HomePage({ skillsData, fetchSkillsData, currentUser }) {
           );
         })}
       </div>
+        </>
+      ) : (
+        <AuthForm />
+      )}
+
     </div>
   );
 }
